@@ -1,0 +1,47 @@
+\documentclass[11pt]{article}
+
+\usepackage{geometry}
+\geometry{a4paper, top=25mm, left=20mm, right=20mm, bottom=20mm,
+headsep=7mm, footskip=5mm}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{XML}
+
+\begin{document}
+
+\section*{XML Syntaxhighlighting}
+
+\subsection*{XML}
+
+\begin{lstlisting}[language=XML]
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "root.dtd">
+<root>
+  <node attr="value">content</node>
+  <node/>
+  <!-- comment -->
+</root>
+\end{lstlisting}
+
+\subsection*{DTD}
+
+\begin{lstlisting}[language=DTD]
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT root (node)*>
+<!ELEMENT node (#PCDATA)>
+<!ATTLIST node
+  attr CDATA #IMPLIED
+>
+\end{lstlisting}
+
+\subsection*{Namespaces}
+
+\begin{lstlisting}[language=XML]
+<a:book xmlns:a="...">
+  <a:title>Title</a:title>
+</a:book>
+\end{lstlisting}
+
+\end{document}
